@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco Andino Perú — Cuentas para independientes y Planes de tarjetas de credito </title>
+  <meta name="description" content="Banco Andino Perú: cuentas para independientes y mypes, apertura de cuenta 100% online, sin costos de mantenimiento el primer año.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="barra-superior">
+    <div class="wrap barra-superior-inner">
+      <nav class="tabs-audiencia" aria-label="Selecciona tu perfil">
+        <a href="index.html" class="tab-audiencia">Independientes</a>
+        <a href="servicios.html" class="tab-audiencia">Planes de tarjetas de credito </a>
+      </nav>
+      <p class="idiomas">Español <span aria-hidden="true">/</span> Quechua</p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo"><span class="logo-marca">»</span> Banco Andino <span>Perú</span></a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html" class="activa">Inicio</a>
+        <a href="servicios.html">Cuentas</a>
+        <a href="como-funciona.html">Cómo abrir tu cuenta</a>
+        <a href="registro.html">Abrir cuenta</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="header-acciones" id="acciones-sesion">
+        <a href="login.html" class="btn btn-outline">Crear cuenta</a>
+        <a href="login.html" class="btn btn-acento">Banca por Internet</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <p class="hero-kicker">Banca comercial para independientes y mypes</p>
+          <h1>Tu negocio genera movimiento todos los días. Tu cuenta debería seguirle el ritmo.</h1>
+          <p class="hero-lead">Abre una cuenta desde tu celular en menos de diez minutos, sin ir a una agencia y sin colas. Diseñada para quien factura, cobra y paga proveedores fuera de un horario de oficina.</p>
+          <div class="hero-actions">
+            <a href="registro.html" class="btn btn-acento">Abrir mi cuenta online</a>
+            <a href="servicios.html" class="btn btn-outline btn-outline-claro">Ver tipos de cuenta</a>
+          </div>
+        </div>
+        <div class="hero-carrusel" aria-hidden="true">
+          <img src="img/carrucel2.avif" alt="hero-carrusel-dots">
+          <div class="hero-carrusel-dots">
+            <span class="dot is-activo"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="hero-carrusel-pausa" type="button" aria-label="Pausar carrusel">⏸</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="accesos-rapidos">
+      <div class="wrap accesos-rapidos-inner">
+        <div class="accesos-lista">
+          <h2>¿Qué necesitas hacer hoy?</h2>
+          <div class="grid-accesos">
+            <a href="registro.html" class="acceso">
+              <span class="acceso-badge">Nuevo</span>
+              <span class="acceso-icono" aria-hidden="true">＋</span>
+              <span>Abrir una cuenta</span>
+            </a>
+            <a href="servicios.html" class="acceso">
+              <span class="acceso-badge">Popular</span>
+              <span class="acceso-icono" aria-hidden="true">🔗</span>
+              <span>Cobrar con link de pago</span>
+            </a>
+            <a href="como-funciona.html" class="acceso">
+              <span class="acceso-icono" aria-hidden="true">🧾</span>
+              <span>Pagar a proveedores</span>
+            </a>
+            <a href="contacto.html" class="acceso">
+              <span class="acceso-icono" aria-hidden="true">📊</span>
+              <span>Ver mis comisiones</span>
+            </a>
+            <a href="servicios.html" class="acceso">
+              <span class="acceso-badge">Promo</span>
+              <span class="acceso-icono" aria-hidden="true">💳</span>
+              <span>Solicitar línea de capital</span>
+            </a>
+            <a href="contacto.html" class="acceso">
+              <span class="acceso-icono" aria-hidden="true">🛡</span>
+              <span>Proteger mi cuenta</span>
+            </a>
+            <a href="servicios.html" class="acceso">
+              <span class="acceso-icono" aria-hidden="true">★</span>
+              <span>Ver mis beneficios</span>
+            </a>
+            <a href="contacto.html" class="acceso">
+              <span class="acceso-icono" aria-hidden="true">?</span>
+              <span>Ir a Ayuda Rápida</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="widget-calificacion">
+          <p class="widget-etiqueta">Mi Espacio Andino</p>
+          <h3>¿Calificas para apertura preferencial?</h3>
+          <ul class="widget-check">
+            <li>Solo con tu número de documento</li>
+            <li>Para independientes y mypes, seas o no cliente</li>
+          </ul>
+          <form class="widget-form" id="form-calificacion" action="registro.html" method="get" novalidate>
+            <label for="widget-tipo-doc" class="visualmente-oculto">Tipo de documento</label>
+            <select id="widget-tipo-doc" name="widget-tipo-doc">
+              <option value="dni">DNI</option>
+              <option value="ruc">RUC</option>
+            </select>
+            <label for="widget-doc" class="visualmente-oculto">Número de documento</label>
+            <input type="text" id="widget-doc" name="documento" placeholder="Nro. de documento" required pattern="[0-9]{8}([0-9]{3})?" title="Ingresa un DNI de 8 dígitos o un RUC de 11 dígitos">
+            <button type="submit" class="btn btn-acento">Conocer</button>
+          </form>
+          <p class="widget-legal">Tu documento se usará únicamente para verificar si calificas para la apertura preferencial.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="teaser-servicios">
+      <div class="wrap">
+        <h2>Tres formas de tener tu cuenta con nosotros</h2>
+        <p class="section-lead">Revisa el detalle de comisiones y beneficios en la página de cuentas.</p>
+        <div class="cards-servicios">
+          <article class="card-servicio">
+            <h3>Cuenta Independiente</h3>
+            <p class="precio">Sin costo de mantenimiento</p>
+            <p>Para quien emite recibos por honorarios y factura de forma irregular.</p>
+          </article>
+          <article class="card-servicio card-servicio--destacada">
+            <p class="etiqueta-destacada">La más solicitada</p>
+            <h3>Cuenta Mype Emprende</h3>
+            <p class="precio">S/ 12 al mes</p>
+            <p>Para negocios que recién formalizan sus operaciones.</p>
+          </article>
+          <article class="card-servicio">
+            <h3>Cuenta Mype Crece</h3>
+            <p class="precio">S/ 25 al mes</p>
+            <p>Para negocios con planilla y proveedores fijos.</p>
+          </article>
+        </div>
+        <a href="servicios.html" class="btn btn-outline" style="margin-top: 28px;">Ver todas las cuentas y comparar beneficios</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="logo logo-footer">Banco Andino <span>Perú</span></p>
+        <p>Banca comercial para independientes y mypes. Sitio académico elaborado para el curso de Diseño Web — entidad de nombre ficticio con fines de práctica.</p>
+      </div>
+      <div>
+        <h3>Navegación</h3>
+        <p><a href="servicios.html">Cuentas</a></p>
+        <p><a href="como-funciona.html">Cómo abrir tu cuenta</a></p>
+        <p><a href="registro.html">Solicitud de apertura</a></p>
+        <p><a href="login.html">Ingresar a Banca por Internet</a></p>
+        <p><a href="contacto.html">Ubicación y contacto</a></p>
+      </div>
+      <div>
+        <h3>Portafolio del autor</h3>
+        <p><a href="../portafolio/index.html">Ver portafolio personal de Jair Bazán</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="registro.html" class="chat-flotante" aria-label="Hablar con un asesor"></a>
+
+  <script type="module" src="js/nav-sesion.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/efectos.js"></script>
+</body>
+</html>

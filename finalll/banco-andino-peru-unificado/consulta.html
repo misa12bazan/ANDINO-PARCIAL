@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis solicitudes — Banco Andino Perú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="app">
+
+  <div class="barra-superior">
+    <div class="wrap barra-superior-inner">
+      <nav class="tabs-audiencia" aria-label="Selecciona tu perfil">
+        <a href="index.html" class="tab-audiencia">Independientes</a>
+        <a href="servicios.html" class="tab-audiencia">Planes de tarjetas de credito </a>
+      </nav>
+      <p class="idiomas">Español <span aria-hidden="true">/</span> Quechua</p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo"><span class="logo-marca">»</span> Banco Andino <span>Perú</span></a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Cuentas</a>
+        <a href="como-funciona.html">Cómo abrir tu cuenta</a>
+        <a href="registro.html" class="activa">Abrir cuenta</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="header-acciones" id="acciones-sesion">
+        <a href="login.html" class="btn btn-outline">Crear cuenta</a>
+        <a href="login.html" class="btn btn-acento">Banca por Internet</a>
+      </div>
+    </div>
+  </header>
+
+  <main><section class="tarjeta"><h1>Mis solicitudes</h1>
+<p id="msgConsulta" class="msg" role="alert" hidden></p>
+<div class="tabla"><table><thead><tr><th>Código</th><th>Titular</th><th>Cuenta</th><th>Monto inicial</th><th>Estado</th><th>Fecha</th><th>Acción</th></tr></thead>
+<tbody id="cuerpo"></tbody></table></div></section></main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="logo logo-footer">Banco Andino <span>Perú</span></p>
+        <p>Banca comercial para independientes y mypes. Sitio académico elaborado para el curso de Diseño Web — entidad de nombre ficticio con fines de práctica.</p>
+      </div>
+      <div>
+        <h3>Navegación</h3>
+        <p><a href="servicios.html">Cuentas</a></p>
+        <p><a href="como-funciona.html">Cómo abrir tu cuenta</a></p>
+        <p><a href="registro.html">Solicitud de apertura</a></p>
+        <p><a href="login.html">Ingresar a Banca por Internet</a></p>
+        <p><a href="contacto.html">Ubicación y contacto</a></p>
+      </div>
+      <div>
+        <h3>Portafolio del autor</h3>
+        <p><a href="../portafolio/index.html">Ver portafolio personal de Jair Bazán</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/consulta/consulta.js"></script>
+  <script type="module" src="js/efectos.js"></script>
+</body>
+</html>

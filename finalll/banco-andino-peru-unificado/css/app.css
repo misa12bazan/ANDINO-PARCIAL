@@ -1,0 +1,101 @@
+/* Estilos de las páginas de la aplicación (login, solicitudes, panel).
+   Se cargan DESPUÉS de style.css, así que usan su misma paleta y cabecera. */
+
+.app main { max-width: 1000px; margin: 2rem auto; padding: 0 24px; min-height: 55vh; }
+.app h1, .app h2 { margin-bottom: .6em; }
+
+.tarjeta { background: var(--color-blanco); border: 1px solid var(--color-borde); border-radius: var(--radio);
+  padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: var(--sombra); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 1rem; }
+.dos  { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+
+/* Botones de formulario y tabla (los .btn de la cabecera siguen siendo los del sitio) */
+.app main button, .app main .btn {
+  font: inherit; font-weight: 700; background: var(--color-primario); color: var(--color-blanco);
+  border: 0; border-radius: var(--radio-pill); padding: .6rem 1.2rem; cursor: pointer;
+  text-decoration: none; display: inline-block; white-space: nowrap;
+}
+.app main button:hover, .app main .btn:hover { background: var(--color-primario-oscuro); color: var(--color-blanco); }
+.app main button.peligro { background: #B3261E; }
+.app main button.sec, .app main .btn.sec {
+  background: var(--color-blanco); color: var(--color-primario); border: 1px solid var(--color-primario);
+}
+
+.quien { font-size: .82rem; color: var(--color-texto-suave); max-width: 13ch; line-height: 1.2; }
+#btnSalir { cursor: pointer; }
+
+/* Mensajes */
+.msg { padding: .7rem 1rem; border-radius: 6px; margin: 1rem 0; font-weight: 600; }
+.msg.ok { background: #E3F4EA; color: #1B7A4B; border: 1px solid #1B7A4B; }
+.msg.error { background: #FDE8E6; color: #B3261E; border: 1px solid #B3261E; }
+.msg.anim { animation: entra .45s ease-out; }
+@keyframes entra { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .msg.anim { animation: none; } }
+[hidden] { display: none !important; }
+
+/* Tablas */
+.tabla { overflow-x: auto; }
+.app table { width: 100%; border-collapse: collapse; background: var(--color-blanco); }
+.app th, .app td { padding: .6rem .7rem; text-align: left; border-bottom: 1px solid var(--color-borde); font-size: .92rem; }
+.app th { background: var(--color-primario-claro); color: var(--color-primario-oscuro); }
+.estado { padding: .1rem .6rem; border-radius: 99px; font-size: .82rem; font-weight: 600; background: var(--color-primario-claro); }
+.estado.registrado { background: #FFF1CF; color: #7A5A08; }
+.estado.atendido { background: #E3F4EA; color: #1B7A4B; }
+.estado.rechazado { background: #FDE8E6; color: #B3261E; }
+.acciones { display: flex; gap: .4rem; }
+.acciones button { padding: .3rem .8rem; font-size: .85rem; }
+.barra { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.barra input { max-width: 280px; }
+.codigo { color: var(--color-primario); font-weight: 700; }
+
+@media (max-width: 520px) { .quien { display: none; } }
+
+/* Formularios: etiqueta sobre el campo y borde neutro hasta que el usuario escriba */
+.app main label { display: block; margin: .8rem 0 .25rem; }
+.app main input, .app main select { width: 100%; }
+.app main input:invalid, .app main input:invalid:not(:placeholder-shown) { border-color: var(--color-borde); }
+.app main input:invalid:focus { border-color: var(--color-primario); }
+
+/* =====================================================
+   EFECTOS DE LA APLICACIÓN
+   ===================================================== */
+.tarjeta { animation: sube-suave .6s ease both; transition: box-shadow .3s ease, transform .3s ease; }
+.tarjeta:hover { box-shadow: 0 22px 40px -18px rgba(10, 61, 143, .35); }
+.dos .tarjeta:nth-child(2) { animation-delay: .15s; }
+.tarjeta:not([hidden]) { animation: sube-suave .45s ease both; }
+
+/* Filas de las tablas: entran una por una y se resaltan al pasar el cursor */
+.app tbody tr { animation: fila-entra .45s ease both; transition: background-color .25s ease, transform .25s ease; }
+.app tbody tr:nth-child(1) { animation-delay: .03s; } .app tbody tr:nth-child(2) { animation-delay: .06s; }
+.app tbody tr:nth-child(3) { animation-delay: .09s; } .app tbody tr:nth-child(4) { animation-delay: .12s; }
+.app tbody tr:nth-child(5) { animation-delay: .15s; } .app tbody tr:nth-child(n+6) { animation-delay: .18s; }
+.app tbody tr:hover { background: var(--color-primario-claro); transform: scale(1.005); }
+@keyframes fila-entra { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: none; } }
+
+.estado { transition: transform .25s ease, box-shadow .25s ease; }
+tr:hover .estado { transform: scale(1.08); box-shadow: 0 4px 10px -4px rgba(0,0,0,.3); }
+.estado.registrado { animation: pulso-estado 2.2s ease-in-out infinite; }
+@keyframes pulso-estado { 0%, 100% { box-shadow: 0 0 0 0 rgba(122, 90, 8, .35); } 50% { box-shadow: 0 0 0 6px rgba(122, 90, 8, 0); } }
+
+/* Mensajes: error con sacudida, éxito con rebote */
+.msg.error.anim { animation: sacude .5s ease; }
+.msg.ok.anim { animation: rebote .55s cubic-bezier(.3, 1.5, .5, 1); }
+@keyframes sacude { 0%, 100% { transform: none; } 20% { transform: translateX(-8px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(5px); } }
+@keyframes rebote { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+
+.quien { transition: color .25s ease; }
+.barra input { transition: max-width .3s ease, box-shadow .25s ease, border-color .25s ease; }
+.barra input:focus { max-width: 380px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta, .app tbody tr, .estado.registrado, .msg.anim { animation: none !important; transition: none !important; }
+}
+
+/* Indicador de turno del trabajador (panel) */
+.turno-info { display: inline-block; padding: .45rem 1rem; border-radius: 99px; font-weight: 600; font-size: .9rem;
+  margin: 0 0 1rem; transition: background-color .4s ease, color .4s ease, box-shadow .4s ease; }
+.turno-info.en-turno { background: #E3F4EA; color: #1B7A4B; box-shadow: 0 0 0 0 rgba(27, 122, 75, .4); animation: pulso-turno 2.4s ease-in-out infinite; }
+.turno-info.fuera-turno { background: #FDE8E6; color: #B3261E; }
+@keyframes pulso-turno { 0%, 100% { box-shadow: 0 0 0 0 rgba(27, 122, 75, .35); } 50% { box-shadow: 0 0 0 8px rgba(27, 122, 75, 0); } }
+@media (prefers-reduced-motion: reduce) { .turno-info.en-turno { animation: none; } }

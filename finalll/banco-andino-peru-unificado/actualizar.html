@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar solicitud — Banco Andino Perú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="app">
+
+  <div class="barra-superior">
+    <div class="wrap barra-superior-inner">
+      <nav class="tabs-audiencia" aria-label="Selecciona tu perfil">
+        <a href="index.html" class="tab-audiencia">Independientes</a>
+        <a href="servicios.html" class="tab-audiencia">Planes de tarjetas de credito </a>
+      </nav>
+      <p class="idiomas">Español <span aria-hidden="true">/</span> Quechua</p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo"><span class="logo-marca">»</span> Banco Andino <span>Perú</span></a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Cuentas</a>
+        <a href="como-funciona.html">Cómo abrir tu cuenta</a>
+        <a href="registro.html" class="activa">Abrir cuenta</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="header-acciones" id="acciones-sesion">
+        <a href="login.html" class="btn btn-outline">Crear cuenta</a>
+        <a href="login.html" class="btn btn-acento">Banca por Internet</a>
+      </div>
+    </div>
+  </header>
+
+  <main><section class="tarjeta"><h1>Editar solicitud <span class="codigo" id="codigo"></span></h1>
+<form id="formActualizar"><div class="grid">
+<div><label for="nombres">Nombres</label><input id="nombres" name="nombres" required maxlength="80"></div>
+<div><label for="apellidos">Apellidos</label><input id="apellidos" name="apellidos" required maxlength="80"></div>
+<div><label for="dni">DNI</label><input id="dni" name="dni" required inputmode="numeric" pattern="[0-9]{8}" title="8 dígitos" maxlength="8"></div>
+<div><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" required pattern="9[0-9]{8}" title="9 dígitos, empieza con 9" maxlength="9"></div>
+<div><label for="tipo_cuenta">Tipo de cuenta</label><select id="tipo_cuenta" name="tipo_cuenta" required><option value="ahorros">Ahorros</option><option value="corriente">Corriente</option><option value="sueldo">Sueldo</option></select></div>
+<div><label for="moneda">Moneda</label><select id="moneda" name="moneda" required><option value="PEN">Soles (S/)</option><option value="USD">Dólares (US$)</option></select></div>
+<div><label for="monto_inicial">Monto inicial</label><input id="monto_inicial" name="monto_inicial" type="number" min="0" step="0.01" required></div>
+</div>
+<p><button type="submit">Guardar cambios</button> <a class="btn sec" href="consulta.html">Volver a mis solicitudes</a></p></form>
+<p id="msgActualizar" class="msg" role="alert" hidden></p></section></main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="logo logo-footer">Banco Andino <span>Perú</span></p>
+        <p>Banca comercial para independientes y mypes. Sitio académico elaborado para el curso de Diseño Web — entidad de nombre ficticio con fines de práctica.</p>
+      </div>
+      <div>
+        <h3>Navegación</h3>
+        <p><a href="servicios.html">Cuentas</a></p>
+        <p><a href="como-funciona.html">Cómo abrir tu cuenta</a></p>
+        <p><a href="registro.html">Solicitud de apertura</a></p>
+        <p><a href="login.html">Ingresar a Banca por Internet</a></p>
+        <p><a href="contacto.html">Ubicación y contacto</a></p>
+      </div>
+      <div>
+        <h3>Portafolio del autor</h3>
+        <p><a href="../portafolio/index.html">Ver portafolio personal de Jair Bazán</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/actualizar/actualizar.js"></script>
+  <script type="module" src="js/efectos.js"></script>
+</body>
+</html>
